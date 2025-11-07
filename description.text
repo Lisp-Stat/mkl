@@ -1,0 +1,20 @@
+MKL is a high-level Common Lisp library built on Intel's Math Kernel Library (MKL), providing a modern interface to Intel OneAPI mathematical functions with C calling conventions.
+
+Unlike traditional BLAS/LAPACK libraries that use Fortran calling conventions, Intel OneAPI libraries (including MKL VML, VSL, FFT, and others) use C calling conventions where:
+- Scalars are passed by value rather than by reference
+- Arrays are passed as pointers
+- Function names follow C conventions
+
+There are four main objectives:
+
+- Provide a high-level, user friendly interface to Intel OneAPI mathematical libraries.
+- Bridge the gap between Common Lisp and modern C-based mathematical libraries.
+- Maintain type safety and automatic dispatch while respecting C calling conventions.
+- Serve as a foundation for wrapping other Intel OneAPI components beyond VML.
+
+The MKL/VML subsystem specifically provides vectorized mathematical operations including:
+- Basic arithmetic: addition, subtraction, multiplication, division
+- Transcendental functions: exponential, logarithm, trigonometric functions
+- Advanced mathematical functions with optimized performance for modern Intel processors
+
+All functions operate on pre-allocated arrays provided by the caller, following MKL's memory management conventions. The library provides automatic type dispatch and supports single precision, double precision, and complex number operations.
